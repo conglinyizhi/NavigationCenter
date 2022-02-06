@@ -1,7 +1,5 @@
 <template>
   <Header/>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
   <LinkCard title="OpenCV C++ 官方英文文档" link="https://docs.opencv.org/3.4.0/"/>
   <LinkCard title="Github 开源社区" link="https://www.github.com"/>
   <LinkCard title="Gitee 国内开源社区" link="https://www.github.com"/>
@@ -13,7 +11,6 @@
 </template>
 
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
 import LinkCard from './components/LinkCard.vue'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
