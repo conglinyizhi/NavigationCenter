@@ -7,6 +7,7 @@
     <div><a
         :href="link"
         v-text="link"
+        target="_blank"
       /></div>
   </div>
 </template>
