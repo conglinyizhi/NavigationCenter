@@ -4,7 +4,10 @@
       class="title"
       v-text="title"
     ></div>
-    <div><a :href="link"></div>
+    <div><a
+        :href="link"
+        v-text="link"
+      /></div>
   </div>
 </template>
 
@@ -22,11 +25,13 @@ a {
 
 .linkCard {
   border: 1px #42b983 groove;
-  padding: 3rem;
-  margin: 3rem;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: left;
+  border-radius: 6px;
 }
 
 .linkCard .title {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 </style>
