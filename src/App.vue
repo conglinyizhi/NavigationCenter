@@ -7,6 +7,7 @@
   <LinkCard title="萌娘百科" link="https://zh.moegirl.org.cn"/>
   <LinkCard title="QQ 邮箱" link="https://mail.qq.com"/>
   <LinkCard title="百度网盘" link="https://pan.baidu.com"/>
+  <LinkCard title="原神官网" link="https://ys.mihoyo.com/main/"/>
   <Footer/>
 </template>
 
