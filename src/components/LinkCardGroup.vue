@@ -1,16 +1,13 @@
 <template>
-  <a
-    class="linkCard"
-    :href="link"
-    v-text="title"
-    target="_blank"
-  />
+  <div class="linkCard">
+    <div v-text="title"></div>
+    <slot></slot>
+  </div>
 </template>
 
 <script setup>
 defineProps({
-  title: String,
-  link: String,
+  title: String
 });
 </script>
 
@@ -23,10 +20,8 @@ a {
   border: 1px #42b983 groove;
   padding: 3px;
   margin: 3px;
-  text-align: center;
+  text-align: left;
   border-radius: 6px;
-  display:inline-block;
-  min-width: 10%;
 }
 
 .linkCard .title {
