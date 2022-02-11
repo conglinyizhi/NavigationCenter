@@ -1,14 +1,28 @@
 <template>
   <div class="linkCard">
-    <div v-text="title"></div>
-    <slot></slot>
+    <div @click="ShowList =! ShowList">
+      <span v-text="title"></span> - <span v-if="ShowList">隐藏</span><span v-else>展开</span>
+    </div>
+    <div v-show="ShowList">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
-<script setup>
-defineProps({
-  title: String
-});
+<script>
+export default {
+  data() {
+    return {
+      ShowList: false,
+    };
+  },
+  props: {
+    title: {
+      type: String,
+      default: "",
+    },
+  },
+};
 </script>
 
 <style scoped>
