@@ -1,33 +1,92 @@
 <template>
   <div id="search">
-    <span @click="changeWebsite">切换引擎：Bing</span>
-    <input type="text" name="keywords" id="keywordsInput" v-model="keywords" @keydown.enter="search" />
-    <span @click="search">搜索</span>
+    <span
+      class="btn"
+      @click="changeWebsite"
+    >
+      <span v-if="changeingWebsite">点击右侧选择搜索引擎</span>
+      <span v-else>{{searchWebsiteList[searchWebsiteID].title}} 或者其他？</span>
+    </span>
+    <span v-show="changeingWebsite">
+      <span
+        class="changeWebsiteButton"
+        v-for="(a,i) in searchWebsiteList"
+        :key="i"
+        v-text="a.title"
+        @click="changeWebsite_Getid(i)"
+      ></span>
+    </span>
+    <input
+      v-show="!changeingWebsite"
+      type="text"
+      name="keywords"
+      id="keywordsInput"
+      v-model="keywords"
+      @keydown.enter="search"
+    />
+    <span
+      v-show="!changeingWebsite"
+      class="btn"
+      @click="search"
+    >搜索</span>
   </div>
 </template>
 
 <script>
+const searchWebsiteList = [
+  {
+    title: "Bing",
+    url: "https://cn.bing.com/search?q=####",
+  },
+  {
+    title: "bilibili",
+    url: "https://search.bilibili.com/all?keyword=####",
+  },
+  {
+    title: "百度搜索",
+    url: "https://www.baidu.com/s?wd=####",
+  },
+  {
+    title: "搜狗搜索",
+    url: "https://www.sogou.com/web?query=####",
+  },
+  {
+    title: "Google",
+    url: "https://www.google.com/search?q=####",
+  },
+];
 export default {
-  name: "test",
+  name: "search",
   props: {
     //为组件注册属性
     searchWebsite: {
       //规范写法
-      type: String,
-      default: "bing",
+      type: Number,
+      default: 0,
     },
   },
   methods: {
-    search(){
-      console.log(this.keywords)
-    },changeWebsite(){
-      console.log("更换搜索引擎")
-    }
+    search() {
+      console.log(this.keywords);
+      let url = this.searchWebsiteList[this.searchWebsiteID].url;
+      let openURL = url.substr(0, url.search(/####/)) + this.keywords
+      window.open(openURL,'_blank')
+    },
+    changeWebsite() {
+      this.changeingWebsite = true;
+    },
+    changeWebsite_Getid(id) {
+      this.searchWebsiteID = id;
+      this.changeingWebsite = false;
+    },
   },
-  data: function () {
+  data() {
     //为组件注册数据
     return {
-      keywords:""
+      changeingWebsite: false,
+      keywords: "",
+      searchWebsiteID: 0,
+      searchWebsiteList,
     };
   },
 };
@@ -54,7 +113,18 @@ export default {
   left: 140px;
   border-color: #ff0 transparent transparent;
 } */
-
+.btn {
+  width: 25%;
+}
+#keywordsInput {
+  width: 50%;
+}
+.changeWebsiteButton {
+  border: 1px #42b983 groove;
+  margin: 0 4px;
+  padding:2px;
+  border-radius: 3px;
+}
 input {
   border: 0;
 }
