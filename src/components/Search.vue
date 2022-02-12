@@ -62,7 +62,8 @@ const searchWebsiteList = [
     url: "https://www.google.com/search",
     key: "q",
     button: "谷歌搜索",
-  },{
+  },
+  {
     title: "微软文档",
     url: "https://support.microsoft.com/zh-cn/Search/results",
     key: "query",
@@ -99,11 +100,18 @@ export default {
 
 <style scoped>
 #search {
-  display: inline-block;
+  display: block;
   margin: 3px;
   border-radius: 5px;
   padding: 5px 0;
-  width: 50%;
+  /* width: 50%; */
+}
+
+@media (min-width: 600px) {
+  #search {
+    display: inline-block;
+    width: 70%;
+  }
 }
 
 /* #search::before {
@@ -118,14 +126,11 @@ export default {
 } */
 #keywordsInput {
   margin-top: 1px;
-  width: 70%;
   border: 1px #42b983 groove;
   border-radius: 2px;
   flex: 8;
 }
 .changeWebsiteButton {
-  width: 4rem;
-  /* background: #fff; */
   height: 1rem;
   line-height: 1rem;
   border: 1px #42b983 groove;
@@ -143,7 +148,7 @@ input[type="submit"],
   border: 1px #42b983 groove;
   border-radius: 3px;
 }
-.searchBox *{
+.searchBox * {
   font-size: 1.2rem;
   line-height: 1.2rem;
 }
