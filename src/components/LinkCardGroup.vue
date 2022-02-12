@@ -7,15 +7,17 @@
       />
       <span class="right">包含 {{siteData.list.length}} 个站点</span>
     </div>
-    <a
-      v-for="(site,key) in siteData.list"
-      :key="key"
-      class="linkCard"
-      :href="site.url"
-      v-text="site.title"
-      :title="site.alt || site.title"
-      target="_blank"
-    />
+    <span v-for="(site,key) in siteData.list" :key="key">
+      <a
+        class="linkCard"
+        :href="site.url"
+        v-text="site.title"
+        :title="site.alt || site.title"
+        target="_blank"
+        v-if="!site.close"
+      />
+      <span v-else class="linkCard" v-text="site.title" @click="showCloseMessage(site)"/>
+    </span>
   </div>
 </template>
 
@@ -35,12 +37,16 @@ export default {
           {
             title: "范例地址",
             url: "https://www.baidu.com",
-            alt:"链接"
+            alt: "链接",
           },
         ],
       },
     },
-  }
+  },methods: {
+    showCloseMessage(site){
+      window.alert(`站点 ${site.title} 关闭原因:\n${site.close}`)
+    }
+  },
 };
 </script>
 

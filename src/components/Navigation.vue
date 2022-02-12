@@ -10,7 +10,7 @@
 import LinkCardGroup from "./LinkCardGroup.vue";
 const siteData = [
   {
-    title: "其他的导航网站",
+    title: "更多导航网站",
     list: [
       { title: "萌导航", url: "https://www.moe123.net" },
       { title: "个站商店", url: "https://storeweb.cn" },
@@ -35,7 +35,7 @@ const siteData = [
     ],
   },
   {
-    title: "开发者之家",
+    title: "开发者",
     list: [
       { title: "Github", url: "https://www.github.com" },
       { title: "Gitee", url: "https://www.github.com" },
@@ -46,7 +46,7 @@ const siteData = [
     ],
   },
   {
-    title: "云服务提供者",
+    title: "云服务",
     list: [
       { title: "阿里云", url: "https://cloud.aliyun.com" },
       { title: "腾讯云", url: "https://cloud.tencent.com" },
@@ -66,14 +66,14 @@ const siteData = [
     ],
   },
   {
-    title: "视频网站",
+    title: "视频",
     list: [
       { title: "AcFun", url: "https://www.acfun.com" },
       { title: "Bilibili", url: "https://www.bilibili.com" },
     ],
   },
   {
-    title: "音乐网站与有声读物",
+    title: "音乐与有声读物",
     list: [
       { title: "网易音乐", url: "https://music.163.com/" },
       { title: "腾讯音乐", url: "https://music.qq.com/" },
@@ -83,11 +83,10 @@ const siteData = [
     ],
   },
   {
-    title: "现代互联网冲浪使用说明",
+    title: "互联网字典",
     list: [
       { title: "萌娘百科", url: "https://zh.moegirl.org.cn" },
       { title: "小鸡词典", url: "https://jikipedia.com" },
-      { title: "知乎日报", url: "https://daily.zhihu.com/" },
     ],
   },
   {
@@ -110,7 +109,12 @@ const siteData = [
       { title: "微博", url: "https://www.weibo.com" },
       { title: "搜狐", url: "https://www.sohu.com" },
     ],
-  },
+  },{
+    title:"友情链接",
+    list:[
+      {title:"暂无",url:"?",close:"暂时没有友情链接"}
+    ]
+  }
 ];
 export default {
   data() {
