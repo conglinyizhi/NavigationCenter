@@ -7,18 +7,23 @@
     <div
       class="btn"
       @click="changeingWebsite =! changeingWebsite"
-    >
-    </div>
-    <div class="itemList">
-      <span
-        class="changeWebsiteButton"
-        v-for="(a,i) in searchWebsiteList"
-        :key="i"
-        v-text="a.title"
-        @click="changeWebsite_Getid(i)"
-      />
-    </div>
+    />
     <span class="searchBox">
+      <span
+        @click="showChangeSearchWebsiteList"
+        class="flex changeWebsiteList"
+      >
+        <select>
+          <option
+            class="changeWebsiteButton"
+            v-for="(a,i) in searchWebsiteList"
+            :key="i"
+            v-text="a.title"
+            @click="changeWebsite_Getid(i)"
+          />
+        </select>
+      </span>
+
       <input
         type="text"
         :name="searchWebsiteList[searchWebsiteID].key"
@@ -122,20 +127,22 @@ export default {
   flex: 8;
 }
 .changeWebsiteButton {
+  width: 4rem;
+  /* background: #fff; */
+  height: 1rem;
+  line-height: 1rem;
   border: 1px #42b983 groove;
   margin: 0 4px;
   padding: 2px;
   border-radius: 3px;
-  flex: 1;
-  line-height: 1.2rem;
 }
 input {
   border: 0;
 }
-input[type="submit"] {
-  margin-left: 3px;
+input[type="submit"],
+.flex {
   flex: 1;
-  margin-top: 1px;
+  margin: 1px 3px 0;
   border: 1px #42b983 groove;
   border-radius: 3px;
 }
@@ -144,7 +151,9 @@ input[type="submit"] {
   padding: 0 10px;
 }
 .itemList {
-  display: flex;
-  padding: 3px 10px;
+  display: block;
+}
+select{
+  border:0;
 }
 </style>
