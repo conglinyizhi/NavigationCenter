@@ -7,17 +7,19 @@
       />
       <span class="right">包含 {{siteData.list.length}} 个站点</span>
     </div>
-    <LinkCard
+    <a
       v-for="(site,key) in siteData.list"
       :key="key"
+      class="linkCard"
+      :href="site.url"
+      v-text="site.title"
       :title="site.title"
-      :link="site.url"
+      target="_blank"
     />
   </div>
 </template>
 
 <script>
-import LinkCard from "./LinkCard.vue";
 export default {
   data() {
     return {
@@ -37,18 +39,11 @@ export default {
         ],
       },
     },
-  },
-  components: {
-    LinkCard,
-  },
+  }
 };
 </script>
 
 <style>
-a {
-  color: #42b983;
-}
-
 .linkCardGroup {
   border: 1px #42b98377 groove;
   padding: 3px;
@@ -73,5 +68,29 @@ a {
 }
 .title .right {
   text-align: right;
+}
+a {
+  color: #42b983;
+  text-decoration: none;
+}
+
+.linkCard {
+  border: 1px #42b9832f groove;
+  padding: 3px;
+  margin: 3px;
+  text-align: center;
+  border-radius: 3px;
+  display: inline-block;
+  width: 10%;
+  min-width: 4rem;
+  max-width: 7rem;
+  line-height: 1.1rem;
+}
+.linkCard:hover {
+  border-color: #42b983;
+}
+
+.linkCard .title {
+  margin-bottom: 0.5rem;
 }
 </style>
