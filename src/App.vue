@@ -22,5 +22,6 @@ import Search from './components/Search.vue'
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  user-select: none;
 }
 </style>
