@@ -2,19 +2,11 @@
   <LinkCardGroup
     v-for="(a,i) in siteData"
     :key="i"
-    :title="a.title"
-  >
-    <LinkCard
-      v-for="(site,key) in a.list"
-      :key="key"
-      :title="site.title"
-      :link="site.url"
-    />
-  </LinkCardGroup>
+    :siteData="a"
+  />
 </template>
 
 <script>
-import LinkCard from "./LinkCard.vue";
 import LinkCardGroup from "./LinkCardGroup.vue";
 const siteData = [
   {
@@ -94,14 +86,6 @@ const siteData = [
     ],
   },
   {
-    title: "现代互联网冲浪使用说明",
-    list: [
-      { title: "萌娘百科", url: "https://zh.moegirl.org.cn" },
-      { title: "小鸡词典", url: "https://jikipedia.com" },
-      { title: "知乎日报", url: "https://daily.zhihu.com/" },
-    ],
-  },
-  {
     title: "没分类",
     list: [{ title: "百度网盘", url: "https://pan.baidu.com" }],
   },
@@ -113,8 +97,7 @@ export default {
     };
   },
   components: {
-    LinkCard,
-    LinkCardGroup,
+    LinkCardGroup
   },
 };
 </script>
