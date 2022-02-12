@@ -6,33 +6,30 @@
   >
     <div
       class="btn"
-      @click="changeWebsite"
+      @click="changeingWebsite =! changeingWebsite"
     >
-      <span v-if="changeingWebsite">点击右侧选择搜索引擎</span>
-      <span v-else>{{searchWebsiteList[searchWebsiteID].title}} 或者其他？</span>
     </div>
-    <span v-show="changeingWebsite">
+    <div class="itemList">
       <span
         class="changeWebsiteButton"
         v-for="(a,i) in searchWebsiteList"
         :key="i"
         v-text="a.title"
         @click="changeWebsite_Getid(i)"
-      ></span>
+      />
+    </div>
+    <span class="searchBox">
+      <input
+        type="text"
+        :name="searchWebsiteList[searchWebsiteID].key"
+        id="keywordsInput"
+        v-model="keywords"
+      />
+      <input
+        type="submit"
+        :value="searchWebsiteList[searchWebsiteID].button"
+      />
     </span>
-    <input
-      v-show="!changeingWebsite"
-      type="text"
-      :name="searchWebsiteList[searchWebsiteID].key"
-      id="keywordsInput"
-      v-model="keywords"
-      @keydown.enter="search"
-    />
-    <input
-      class="btn"
-      type="submit"
-      value="搜索"
-    />
   </form>
 </template>
 
@@ -42,26 +39,31 @@ const searchWebsiteList = [
     title: "Bing",
     url: "https://cn.bing.com/search",
     key: "q",
+    button: "必应搜索",
   },
   {
     title: "bilibili",
     url: "https://search.bilibili.com/all",
     key: "keyword",
+    button: "哔哩哔哩搜索",
   },
   {
     title: "百度搜索",
     url: "https://www.baidu.com/s",
     key: "wd",
+    button: "百度搜索",
   },
   {
     title: "搜狗搜索",
     url: "https://www.sogou.com/web",
     key: "query",
+    button: "搜狗搜索",
   },
   {
     title: "Google",
     url: "https://www.google.com/search",
     key: "q",
+    button: "谷歌搜索",
   },
 ];
 export default {
@@ -75,10 +77,6 @@ export default {
     },
   },
   methods: {
-    search() {},
-    changeWebsite() {
-      this.changeingWebsite = true;
-    },
     changeWebsite_Getid(id) {
       this.searchWebsiteID = id;
       this.changeingWebsite = false;
@@ -100,7 +98,7 @@ export default {
 #search {
   display: inline-block;
   margin: 3px;
-  border-radius: 1.3rem;
+  border-radius: 5px;
   padding: 5px 0;
   width: 50%;
   border: 1px #ccc groove;
@@ -116,23 +114,37 @@ export default {
   left: 140px;
   border-color: #ff0 transparent transparent;
 } */
-.btn {
-  width: 25%;
-}
 #keywordsInput {
-  width: 50%;
+  margin-top: 1px;
+  width: 70%;
   border: 1px #42b983 groove;
+  border-radius: 2px;
+  flex: 8;
 }
 .changeWebsiteButton {
   border: 1px #42b983 groove;
   margin: 0 4px;
   padding: 2px;
   border-radius: 3px;
+  flex: 1;
+  line-height: 1.2rem;
 }
 input {
   border: 0;
 }
-span {
+input[type="submit"] {
+  margin-left: 3px;
+  flex: 1;
+  margin-top: 1px;
+  border: 1px #42b983 groove;
+  border-radius: 3px;
+}
+.searchBox {
+  display: flex;
   padding: 0 10px;
+}
+.itemList {
+  display: flex;
+  padding: 3px 10px;
 }
 </style>
