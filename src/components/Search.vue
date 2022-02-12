@@ -62,6 +62,11 @@ const searchWebsiteList = [
     url: "https://www.google.com/search",
     key: "q",
     button: "谷歌搜索",
+  },{
+    title: "微软文档",
+    url: "https://support.microsoft.com/zh-cn/Search/results",
+    key: "query",
+    button: "文档搜索",
   },
 ];
 export default {
