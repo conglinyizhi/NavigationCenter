@@ -40,6 +40,9 @@ const siteData = [
       { title: "Github", url: "https://www.github.com" },
       { title: "Gitee", url: "https://www.github.com" },
       { title: "思否", url: "https://segmentfault.com" },
+      { title: "少数派", url: "https://www.sspai.com" },
+      { title: "博客园", url: "https://www.cnblogs.com" },
+      { title: "SoJSON", url: "https://www.sojson.com/" },
     ],
   },
   {
@@ -75,6 +78,8 @@ const siteData = [
       { title: "网易音乐", url: "https://music.163.com/" },
       { title: "腾讯音乐", url: "https://music.qq.com/" },
       { title: "喜马拉雅", url: "https://www.ximalaya.com" },
+      { title: "荔枝FM", url: "https://lizhi.fm" },
+      { title: "凤凰FM", url: "https://diantai.ifeng.com" },
     ],
   },
   {
@@ -89,6 +94,23 @@ const siteData = [
     title: "没分类",
     list: [{ title: "百度网盘", url: "https://pan.baidu.com" }],
   },
+  {
+    title: "购物或比价平台",
+    list: [
+      { title: "啥值得买", alt: "什么值得买", url: "https://www.smzdm.com" },
+      { title: "淘宝", url: "https://www.taobao.com" },
+      { title: "京东", url: "https://www.jd.com" },
+    ],
+  },
+  {
+    title: "新闻资讯",
+    list: [
+      { title: "今日热榜", url: "https://tophub.today" },
+      { title: "新浪", url: "https://www.sina.com.cn" },
+      { title: "微博", url: "https://www.weibo.com" },
+      { title: "搜狐", url: "https://www.sohu.com" },
+    ],
+  },
 ];
 export default {
   data() {
@@ -97,7 +119,7 @@ export default {
     };
   },
   components: {
-    LinkCardGroup
+    LinkCardGroup,
   },
 };
 </script>

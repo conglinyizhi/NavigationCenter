@@ -13,7 +13,7 @@
       class="linkCard"
       :href="site.url"
       v-text="site.title"
-      :title="site.title"
+      :title="site.alt || site.title"
       target="_blank"
     />
   </div>
@@ -35,6 +35,7 @@ export default {
           {
             title: "范例地址",
             url: "https://www.baidu.com",
+            alt:"链接"
           },
         ],
       },
