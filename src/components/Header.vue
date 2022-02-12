@@ -1,6 +1,8 @@
 <template>
   <div id="header">
-      丛林意志的互联网领航页
+    丛林意志的互联网领航页 |
+    <router-link to="/">主页</router-link> |
+    <router-link to="/about">关于</router-link>
   </div>
 </template>
 
@@ -8,8 +10,8 @@
 defineProps({});
 </script>
 
-<style scoped>
-#header{
-    padding:1rem;
+<style>
+#header {
+  padding: 1rem;
 }
 </style>
