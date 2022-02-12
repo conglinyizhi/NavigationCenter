@@ -1,12 +1,16 @@
 <template>
-  <div id="search">
-    <span
+  <form
+    id="search"
+    :action="searchWebsiteList[searchWebsiteID].url"
+    target="_blank"
+  >
+    <div
       class="btn"
       @click="changeWebsite"
     >
       <span v-if="changeingWebsite">点击右侧选择搜索引擎</span>
       <span v-else>{{searchWebsiteList[searchWebsiteID].title}} 或者其他？</span>
-    </span>
+    </div>
     <span v-show="changeingWebsite">
       <span
         class="changeWebsiteButton"
@@ -19,40 +23,45 @@
     <input
       v-show="!changeingWebsite"
       type="text"
-      name="keywords"
+      :name="searchWebsiteList[searchWebsiteID].key"
       id="keywordsInput"
       v-model="keywords"
       @keydown.enter="search"
     />
-    <span
-      v-show="!changeingWebsite"
+    <input
       class="btn"
-      @click="search"
-    >搜索</span>
-  </div>
+      type="submit"
+      value="搜索"
+    />
+  </form>
 </template>
 
 <script>
 const searchWebsiteList = [
   {
     title: "Bing",
-    url: "https://cn.bing.com/search?q=####",
+    url: "https://cn.bing.com/search",
+    key: "q",
   },
   {
     title: "bilibili",
-    url: "https://search.bilibili.com/all?keyword=####",
+    url: "https://search.bilibili.com/all",
+    key: "keyword",
   },
   {
     title: "百度搜索",
-    url: "https://www.baidu.com/s?wd=####",
+    url: "https://www.baidu.com/s",
+    key: "wd",
   },
   {
     title: "搜狗搜索",
-    url: "https://www.sogou.com/web?query=####",
+    url: "https://www.sogou.com/web",
+    key: "query",
   },
   {
     title: "Google",
-    url: "https://www.google.com/search?q=####",
+    url: "https://www.google.com/search",
+    key: "q",
   },
 ];
 export default {
@@ -66,12 +75,7 @@ export default {
     },
   },
   methods: {
-    search() {
-      console.log(this.keywords);
-      let url = this.searchWebsiteList[this.searchWebsiteID].url;
-      let openURL = url.substr(0, url.search(/####/)) + this.keywords;
-      window.open(openURL, "_blank");
-    },
+    search() {},
     changeWebsite() {
       this.changeingWebsite = true;
     },
@@ -94,11 +98,11 @@ export default {
 
 <style scoped>
 #search {
-  display: block;
+  display: inline-block;
   margin: 3px;
   border-radius: 1.3rem;
   padding: 5px 0;
-  height: 1.3rem;
+  width: 50%;
   border: 1px #ccc groove;
 }
 
@@ -117,7 +121,7 @@ export default {
 }
 #keywordsInput {
   width: 50%;
-  border:1px #42b983 groove;
+  border: 1px #42b983 groove;
 }
 .changeWebsiteButton {
   border: 1px #42b983 groove;
@@ -128,7 +132,7 @@ export default {
 input {
   border: 0;
 }
-span{
-  padding:0 10px;
+span {
+  padding: 0 10px;
 }
 </style>
