@@ -17,16 +17,22 @@ defineProps({
 <style scoped>
 a {
   color: #42b983;
+  text-decoration: none;
 }
 
 .linkCard {
-  border: 1px #42b983 groove;
+  border: 1px #42b9832f groove;
   padding: 3px;
   margin: 3px;
   text-align: center;
-  border-radius: 6px;
-  display:inline-block;
-  min-width: 10%;
+  border-radius: 3px;
+  display: inline-block;
+  width: 10%;
+  min-width: 4rem;
+  max-width: 7rem;
+}
+.linkCard:hover{
+  border-color: #42b983;
 }
 
 .linkCard .title {

@@ -1,11 +1,7 @@
 <template>
   <div class="linkCard">
-    <div @click="ShowList =! ShowList">
-      <span v-text="title"></span> - <span v-if="ShowList">隐藏</span><span v-else>展开</span>
-    </div>
-    <div v-show="ShowList">
-      <slot></slot>
-    </div>
+    <div class="title" v-text="title"/>
+    <slot></slot>
   </div>
 </template>
 
@@ -31,14 +27,17 @@ a {
 }
 
 .linkCard {
-  border: 1px #42b983 groove;
+  border: 1px #42b98377 groove;
   padding: 3px;
   margin: 3px;
   text-align: left;
   border-radius: 6px;
+  margin: 3px 5px;
 }
-
-.linkCard .title {
-  margin-bottom: 0.5rem;
+@media screen and (min-width: 900px) {
+  .linkCard {
+    width: 80%;
+    display: inline-block;
+  }
 }
 </style>
