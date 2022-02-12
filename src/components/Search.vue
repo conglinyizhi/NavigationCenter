@@ -48,19 +48,19 @@ const searchWebsiteList = [
     button: "哔哩哔哩搜索",
   },
   {
-    title: "百度搜索",
+    title: "百度",
     url: "https://www.baidu.com/s",
     key: "wd",
     button: "百度搜索",
   },
   {
-    title: "搜狗搜索",
+    title: "搜狗",
     url: "https://www.sogou.com/web",
     key: "query",
     button: "搜狗搜索",
   },
   {
-    title: "Google",
+    title: "谷歌",
     url: "https://www.google.com/search",
     key: "q",
     button: "谷歌搜索",
