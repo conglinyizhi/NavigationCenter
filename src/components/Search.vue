@@ -4,15 +4,8 @@
     :action="searchWebsiteList[searchWebsiteID].url"
     target="_blank"
   >
-    <div
-      class="btn"
-      @click="changeingWebsite =! changeingWebsite"
-    />
     <span class="searchBox">
-      <span
-        @click="showChangeSearchWebsiteList"
-        class="flex changeWebsiteList"
-      >
+      <span class="flex">
         <select>
           <option
             class="changeWebsiteButton"
@@ -106,7 +99,6 @@ export default {
   border-radius: 5px;
   padding: 5px 0;
   width: 50%;
-  border: 1px #ccc groove;
 }
 
 /* #search::before {
@@ -146,6 +138,10 @@ input[type="submit"],
   border: 1px #42b983 groove;
   border-radius: 3px;
 }
+.searchBox *{
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+}
 .searchBox {
   display: flex;
   padding: 0 10px;
@@ -153,7 +149,7 @@ input[type="submit"],
 .itemList {
   display: block;
 }
-select{
-  border:0;
+select {
+  border: 0;
 }
 </style>
