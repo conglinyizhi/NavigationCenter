@@ -14,7 +14,7 @@ defineProps({
 });
 </script>
 
-<style scoped>
+<style>
 a {
   color: #42b983;
   text-decoration: none;

@@ -1,5 +1,5 @@
 <template>
-  <div class="linkCard">
+  <div class="linkCardGroup">
     <div class="title" v-text="title"/>
     <slot></slot>
   </div>
@@ -21,12 +21,12 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 a {
   color: #42b983;
 }
 
-.linkCard {
+.linkCardGroup {
   border: 1px #42b98377 groove;
   padding: 3px;
   margin: 3px;
@@ -34,8 +34,11 @@ a {
   border-radius: 6px;
   margin: 3px 5px;
 }
+.linkCardGroup .title{
+  padding-left:4px;
+}
 @media screen and (min-width: 900px) {
-  .linkCard {
+  .linkCardGroup {
     width: 80%;
     display: inline-block;
   }

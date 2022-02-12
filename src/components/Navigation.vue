@@ -56,6 +56,6 @@ import LinkCardGroup from './LinkCardGroup.vue'
 defineProps({});
 </script>
 
-<style scoped>
+<style>
 
 </style>
