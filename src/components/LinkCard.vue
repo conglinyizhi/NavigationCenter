@@ -30,6 +30,7 @@ a {
   width: 10%;
   min-width: 4rem;
   max-width: 7rem;
+  line-height: 1.1rem;
 }
 .linkCard:hover{
   border-color: #42b983;
