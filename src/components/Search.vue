@@ -69,8 +69,8 @@ export default {
     search() {
       console.log(this.keywords);
       let url = this.searchWebsiteList[this.searchWebsiteID].url;
-      let openURL = url.substr(0, url.search(/####/)) + this.keywords
-      window.open(openURL,'_blank')
+      let openURL = url.substr(0, url.search(/####/)) + this.keywords;
+      window.open(openURL, "_blank");
     },
     changeWebsite() {
       this.changeingWebsite = true;
@@ -81,7 +81,6 @@ export default {
     },
   },
   data() {
-    //为组件注册数据
     return {
       changeingWebsite: false,
       keywords: "",
@@ -98,7 +97,7 @@ export default {
   display: block;
   margin: 3px;
   border-radius: 1.3rem;
-  padding: 3px 0;
+  padding: 5px 0;
   height: 1.3rem;
   border: 1px #ccc groove;
 }
@@ -118,14 +117,18 @@ export default {
 }
 #keywordsInput {
   width: 50%;
+  border:1px #42b983 groove;
 }
 .changeWebsiteButton {
   border: 1px #42b983 groove;
   margin: 0 4px;
-  padding:2px;
+  padding: 2px;
   border-radius: 3px;
 }
 input {
   border: 0;
+}
+span{
+  padding:0 10px;
 }
 </style>
