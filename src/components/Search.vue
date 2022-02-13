@@ -1,34 +1,55 @@
 <template>
   <form
     id="search"
-    :action="searchWebsiteList[searchWebsiteID].url"
+    :action="searchWebsiteID > -1 ? searchWebsiteList[searchWebsiteID].url : ''"
     target="_blank"
   >
     <span class="searchBox">
       <span class="flex">
-        <select>
+        <select
+          class="selectWebsiteList"
+          v-model="searchWebsiteID"
+        >
           <option
             class="changeWebsiteButton"
             v-for="(a,i) in searchWebsiteList"
             :key="i"
+            :value="i"
             v-text="a.title"
-            @click="changeWebsite_Getid(i)"
+          />
+          <option
+            v-text="'帮我选择'"
+            @click="showHelper"
+            :value="-1"
           />
         </select>
       </span>
-
       <input
+        :disabled="searchWebsiteID == -1"
         type="text"
-        :name="searchWebsiteList[searchWebsiteID].key"
+        :name="searchWebsiteID > -1 ? searchWebsiteList[searchWebsiteID].key : ''"
         id="keywordsInput"
         v-model="keywords"
       />
       <input
+        :disabled="searchWebsiteID == -1"
         type="submit"
-        :value="searchWebsiteList[searchWebsiteID].button"
+        value="搜索"
       />
     </span>
   </form>
+  <div
+    id="searchSelectHelper"
+    v-if="searchWebsiteID == -1"
+  >
+    <div>搜索引擎使用提示</div>
+    <ul>
+      <li>如果您需要找到某个问题的解决方案，请使用必应或者谷歌</li>
+      <li>如果您需要 Excel 或者 Office 办公软件的使用方法，请使用微软文档搜索</li>
+      <li>如果您需要搜索文中的某个段落出处，优先使用百度</li>
+      <li>除非仅仅是在搜索一个 bilibili UP 主或者 BVid 或者 aid，否则请不要使用 bilibili 搜索</li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -37,37 +58,31 @@ const searchWebsiteList = [
     title: "Bing",
     url: "https://cn.bing.com/search",
     key: "q",
-    button: "必应搜索",
   },
   {
     title: "bilibili",
     url: "https://search.bilibili.com/all",
     key: "keyword",
-    button: "哔哩哔哩搜索",
   },
   {
     title: "百度",
     url: "https://www.baidu.com/s",
     key: "wd",
-    button: "百度搜索",
   },
   {
     title: "搜狗",
     url: "https://www.sogou.com/web",
     key: "query",
-    button: "搜狗搜索",
   },
   {
     title: "谷歌",
     url: "https://www.google.com/search",
     key: "q",
-    button: "谷歌搜索",
   },
   {
     title: "微软文档",
     url: "https://support.microsoft.com/zh-cn/Search/results",
     key: "query",
-    button: "文档搜索",
   },
 ];
 export default {
@@ -92,10 +107,10 @@ export default {
       keywords: "",
       searchWebsiteID: 0,
       searchWebsiteList,
+      searchHelper: 0,
     };
   },
 };
-// defineProps({keywords:""});
 </script>
 
 <style scoped>
@@ -104,13 +119,21 @@ export default {
   margin: 3px;
   border-radius: 5px;
   padding: 5px 0;
-  /* width: 50%; */
 }
 
+  #keywordsInput {
+    margin-top: 1px;
+    border: 1px #42b983 groove;
+    border-radius: 2px;
+    flex: 2;
+  }
 @media (min-width: 600px) {
   #search {
     display: inline-block;
     width: 70%;
+  }
+  #keywordsInput {
+    flex: 5;
   }
 }
 
@@ -124,21 +147,8 @@ export default {
   left: 140px;
   border-color: #ff0 transparent transparent;
 } */
-#keywordsInput {
-  margin-top: 1px;
-  border: 1px #42b983 groove;
-  border-radius: 2px;
-  flex: 8;
-}
-.changeWebsiteButton {
-  height: 1rem;
-  line-height: 1rem;
-  border: 1px #42b983 groove;
-  margin: 0 4px;
-  padding: 2px;
-  border-radius: 3px;
-}
-input {
+input,
+select {
   border: 0;
 }
 input[type="submit"],
@@ -149,17 +159,27 @@ input[type="submit"],
   border-radius: 3px;
 }
 .searchBox * {
-  font-size: 1.2rem;
-  line-height: 1.2rem;
+  font-size: 1rem;
+  line-height: 1.1rem;
 }
 .searchBox {
   display: flex;
   padding: 0 10px;
 }
-.itemList {
-  display: block;
+
+.selectWebsiteList {
+  width: 100%;
+  min-width: 3rem;
 }
-select {
-  border: 0;
+#searchSelectHelper {
+  border: 1px #42b983 groove;
+  margin: 5px;
+  border-radius: 3px;
+  padding: 15px 30px 3px;
+  padding-right: 20px;
+}
+#searchSelectHelper ul {
+  text-align: left;
+  padding-left: 0;
 }
 </style>
