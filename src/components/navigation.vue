@@ -44,6 +44,11 @@ const siteData = [
     list: [
       { title: "萌导航", url: "https://www.moe123.net" },
       { title: "个站商店", url: "https://storeweb.cn" },
+      {
+        title: "牛逼网站",
+        alt: "真的就叫这个名字……",
+        url: "https://www.nbwz.com",
+      },
     ],
   },
   {
@@ -62,6 +67,11 @@ const siteData = [
       { title: "OpenCV", url: "https://docs.opencv.org/3.4.0" },
       { title: "Vue.js", url: "https://cn.vuejs.org" },
       { title: "MDUI.js", url: "https://www.mdui.org/docs/" },
+      {
+        title: "Vuetify",
+        alt: "Material Design 的 Vue 组件库",
+        url: "https://vuetify.cn/zh-Hans/",
+      },
     ],
   },
   {
@@ -135,10 +145,11 @@ const siteData = [
     ],
   },
   {
-    title: "互联网字典",
+    title: "互联网字典与WIKI",
     list: [
       { title: "萌娘百科", url: "https://zh.moegirl.org.cn" },
       { title: "小鸡词典", url: "https://jikipedia.com" },
+      { title: "wikiHow", url: "https://zh.wikihow.com" },
     ],
   },
   {
@@ -169,6 +180,7 @@ const siteData = [
       { title: "FireFox", url: "https://www.mozilla.org/zh-CN/firefox/" },
       { title: "Edge", url: "https://www.microsoft.com/zh-cn/edge" },
       { title: "TheWorld", url: "http://www.theworld.cn/" },
+      { title: "Via", url: "https://viayoo.com/zh-cn/", only_android: true },
     ],
   },
   {
