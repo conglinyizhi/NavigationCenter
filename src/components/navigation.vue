@@ -29,6 +29,10 @@
         v-text="site.title"
         @click="showCloseMessage(site)"
       />
+      <div class="onlyPrint">
+        <span v-text="site.title" /> <br />
+        <span v-text="site.url" />
+      </div>
     </span>
   </div>
 </template>
@@ -202,5 +206,11 @@ a {
 }
 .linkCard .title {
   margin-bottom: 0.5rem;
+}
+
+@media screen {
+  .onlyPrint {
+    display: none;
+  }
 }
 </style>
