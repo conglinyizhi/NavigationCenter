@@ -1,11 +1,9 @@
 <template>
-  <!-- <LinkCardGroup
-    v-for="(a,i) in siteData"
+  <div
+    class="linkCardGroup"
+    v-for="(siteList,i) in siteData"
     :key="i"
-    :siteData="a"
-  /> -->
-    <div class="linkCardGroup" v-for="(siteList,i) in siteData"
-    :key="i">
+  >
     <div class="title">
       <span
         class="left"
@@ -13,7 +11,10 @@
       />
       <span class="right">包含 {{siteList.list.length}} 个站点</span>
     </div>
-    <span v-for="(site,key) in siteList.list" :key="key">
+    <span
+      v-for="(site,key) in siteList.list"
+      :key="key"
+    >
       <a
         class="linkCard"
         :href="site.url"
@@ -22,13 +23,17 @@
         target="_blank"
         v-if="!site.close"
       />
-      <span v-else class="linkCard" v-text="site.title" @click="showCloseMessage(site)"/>
+      <span
+        v-else
+        class="linkCard"
+        v-text="site.title"
+        @click="showCloseMessage(site)"
+      />
     </span>
   </div>
 </template>
 
 <script>
-import LinkCardGroup from "./LinkCardGroup.vue";
 const siteData = [
   {
     title: "更多导航网站",
@@ -130,12 +135,11 @@ const siteData = [
       { title: "微博", url: "https://www.weibo.com" },
       { title: "搜狐", url: "https://www.sohu.com" },
     ],
-  },{
-    title:"友情链接",
-    list:[
-      {title:"暂无",url:"?",close:"暂时没有友情链接"}
-    ]
-  }
+  },
+  {
+    title: "友情链接",
+    list: [{ title: "暂无", url: "?", close: "暂时没有友情链接" }],
+  },
 ];
 export default {
   data() {
@@ -144,12 +148,9 @@ export default {
     };
   },
   methods: {
-    showCloseMessage(site){
-      window.alert(`站点 ${site.title} 关闭原因:\n${site.close}`)
-    }
-  },
-  components: {
-    LinkCardGroup,
+    showCloseMessage(site) {
+      window.alert(`站点 ${site.title} 关闭原因:\n${site.close}`);
+    },
   },
 };
 </script>
