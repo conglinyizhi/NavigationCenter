@@ -1,15 +1,20 @@
 <template>
-  <Header/>
-  <router-view/>
-  <Footer/>
+  <Header />
+  <router-view />
+  <Footer />
 </template>
 
-<script setup>
-import Header from '@/components/header.vue'
-import Footer from '@/components/footer.vue'
+<script>
+import Header from "./components/header.vue";
+import Footer from "./components/footer.vue";
 
-// This starter template is using Vue 3 experimental <script setup> SFCs
-// Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
+export default {
+  name: "Home",
+  components: {
+    Header,
+    Footer,
+  },
+};
 </script>
 
 <style>
@@ -18,7 +23,15 @@ import Footer from '@/components/footer.vue'
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   user-select: none;
+}
+
+/* 深色模式 */
+html {
+  background: #111;
+}
+body,*{
+  background-color: #111;
+  color: #fff;
 }
 </style>
