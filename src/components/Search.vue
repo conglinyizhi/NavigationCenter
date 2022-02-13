@@ -151,8 +151,8 @@ input[type="submit"],
   border-radius: 3px;
 }
 .searchBox * {
-  font-size: 1rem;
-  line-height: 1.1rem;
+  font-size: 1.2rem;
+  line-height: 2rem;
 }
 .searchBox {
   display: flex;
