@@ -88,17 +88,9 @@ const searchWebsiteList = [
 export default {
   name: "search",
   props: {
-    //为组件注册属性
     searchWebsite: {
-      //规范写法
       type: Number,
       default: 0,
-    },
-  },
-  methods: {
-    changeWebsite_Getid(id) {
-      this.searchWebsiteID = id;
-      this.changeingWebsite = false;
     },
   },
   data() {
