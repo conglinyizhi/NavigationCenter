@@ -1,9 +1,30 @@
 <template>
-  <LinkCardGroup
+  <!-- <LinkCardGroup
     v-for="(a,i) in siteData"
     :key="i"
     :siteData="a"
-  />
+  /> -->
+    <div class="linkCardGroup" v-for="(siteList,i) in siteData"
+    :key="i">
+    <div class="title">
+      <span
+        class="left"
+        v-text="siteList.title"
+      />
+      <span class="right">包含 {{siteList.list.length}} 个站点</span>
+    </div>
+    <span v-for="(site,key) in siteList.list" :key="key">
+      <a
+        class="linkCard"
+        :href="site.url"
+        v-text="site.title"
+        :title="site.alt || site.title"
+        target="_blank"
+        v-if="!site.close"
+      />
+      <span v-else class="linkCard" v-text="site.title" @click="showCloseMessage(site)"/>
+    </span>
+  </div>
 </template>
 
 <script>
@@ -121,6 +142,11 @@ export default {
     return {
       siteData,
     };
+  },
+  methods: {
+    showCloseMessage(site){
+      window.alert(`站点 ${site.title} 关闭原因:\n${site.close}`)
+    }
   },
   components: {
     LinkCardGroup,
