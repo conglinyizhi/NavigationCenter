@@ -44,6 +44,7 @@
   >
     <div>搜索引擎使用提示</div>
     <ul>
+      <li>查找网络热词，优先小鸡词典</li>
       <li>需要找到某个问题的解决方案，请使用必应或者谷歌</li>
       <li>Excel 或者 Office 办公软件的使用方法，也许可以试试微软文档搜索</li>
       <li>如果您需要搜索文中的某个段落出处，可以考虑使用百度</li>
@@ -59,6 +60,11 @@ const searchWebsiteList = [
     title: "Bing",
     url: "https://cn.bing.com/search",
     key: "q",
+  },
+  {
+    title: "小鸡词典",
+    url: "https://jikipedia.com/search",
+    key: "phrase",
   },
   {
     title: "bilibili",
@@ -84,7 +90,8 @@ const searchWebsiteList = [
     title: "微软文档",
     url: "https://support.microsoft.com/zh-cn/Search/results",
     key: "query",
-  },{
+  },
+  {
     title: "夸克搜索",
     url: "https://quark.sm.cn/s",
     key: "q",
@@ -118,12 +125,12 @@ export default {
   padding: 5px 0;
 }
 
-  #keywordsInput {
-    margin-top: 1px;
-    border: 1px #42b983 groove;
-    border-radius: 2px;
-    flex: 2;
-  }
+#keywordsInput {
+  margin-top: 1px;
+  border: 1px #42b983 groove;
+  border-radius: 2px;
+  flex: 2;
+}
 @media (min-width: 600px) {
   #search {
     display: inline-block;
