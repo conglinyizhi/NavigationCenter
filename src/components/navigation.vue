@@ -70,7 +70,6 @@ const siteData = [
       { title: "Github", url: "https://www.github.com" },
       { title: "Gitee", url: "https://www.github.com" },
       { title: "思否", url: "https://segmentfault.com" },
-      { title: "少数派", url: "https://www.sspai.com" },
       { title: "博客园", url: "https://www.cnblogs.com" },
       { title: "SoJSON", url: "https://www.sojson.com/" },
     ],
@@ -96,10 +95,33 @@ const siteData = [
     ],
   },
   {
+    title: "文字媒体",
+    list: [
+      { title: "少数派", url: "https://www.sspai.com" },
+      { title: "知乎", url: "https://www.zhihu.com" },
+      { title: "晚点", url: "https://www.latepost.com/site/index" },
+    ],
+  },
+  {
     title: "视频",
     list: [
       { title: "AcFun", url: "https://www.acfun.com" },
       { title: "Bilibili", url: "https://www.bilibili.com" },
+      { title: "优酷", url: "https://www.youku.com" },
+      { title: "爱奇艺", url: "http://www.iqiyi.com/" },
+      { title: "抖音", url: "https://www.douyin.com" },
+      { title: "秒拍", url: "https://www.miaopai.com" },
+      { title: "快手", url: "https://www.kuaishou.com" },
+      { title: "小咖秀", url: "http://www.xiaokaxiu.com" },
+      { title: "微视", url: "https://weishi.qq.com" },
+      { title: "抖音火山版", url: "https://www.huoshanzhibo.com" },
+      { title: "美拍", url: "https://www.meipai.com" },
+      { title: "西瓜", url: "https://sso.toutiao.com" },
+      { title: "快剪辑", url: "https://kuai.360.cn" },
+      { title: "火锅视频", url: "https://yoo.qq.com" },
+      { title: "好看视频", url: "https://haokan.baidu.com" },
+      { title: "梨视频", url: "https://www.pearvideo.com" },
+      { title: "小红书", url: "https://www.xiaohongshu.com" },
     ],
   },
   {
@@ -120,15 +142,33 @@ const siteData = [
     ],
   },
   {
-    title: "没分类",
-    list: [{ title: "百度网盘", url: "https://pan.baidu.com" }],
+    title: "网络存储服务",
+    list: [
+      { title: "蓝奏云", url: "https://up.woozooo.com/" },
+      { title: "坚果云", url: "https://www.jianguoyun.com" },
+      { title: "百度网盘", url: "https://pan.baidu.com" },
+      { title: "OneDrive", url: "https://onedrive.live.com/about/zh-cn/" },
+      { title: "和彩云", url: "https://yun.139.com/w/#/" },
+      { title: "永硕E盘", url: "http://ys168.com/" },
+      { title: "阿里云盘", url: "https://yunpan.aliyun.com" },
+      { title: "腾讯微云", url: "https://www.weiyun.com" },
+    ],
   },
   {
-    title: "购物或比价平台",
+    title: "购物和比价",
     list: [
       { title: "啥值得买", alt: "什么值得买", url: "https://www.smzdm.com" },
       { title: "淘宝", url: "https://www.taobao.com" },
       { title: "京东", url: "https://www.jd.com" },
+    ],
+  },
+  {
+    title: "浏览器官网",
+    list: [
+      { title: "Chrome", url: "https://www.google.cn/chrome" },
+      { title: "FireFox", url: "https://www.mozilla.org/zh-CN/firefox/" },
+      { title: "Edge", url: "https://www.microsoft.com/zh-cn/edge" },
+      { title: "TheWorld", url: "http://www.theworld.cn/" },
     ],
   },
   {
@@ -197,7 +237,7 @@ a {
   border-radius: 3px;
   display: inline-block;
   width: 10%;
-  min-width: 4rem;
+  min-width: 5rem;
   max-width: 7rem;
   line-height: 1.1rem;
 }
