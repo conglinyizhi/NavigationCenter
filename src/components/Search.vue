@@ -44,9 +44,10 @@
   >
     <div>搜索引擎使用提示</div>
     <ul>
-      <li>如果您需要找到某个问题的解决方案，请使用必应或者谷歌</li>
-      <li>如果您需要 Excel 或者 Office 办公软件的使用方法，请使用微软文档搜索</li>
-      <li>如果您需要搜索文中的某个段落出处，优先使用百度</li>
+      <li>需要找到某个问题的解决方案，请使用必应或者谷歌</li>
+      <li>Excel 或者 Office 办公软件的使用方法，也许可以试试微软文档搜索</li>
+      <li>如果您需要搜索文中的某个段落出处，可以考虑使用百度</li>
+      <li>搜索电影、小说，夸克的搜索结果优于其他</li>
       <li>除非仅仅是在搜索一个 bilibili UP 主或者 BVid 或者 aid，否则请不要使用 bilibili 搜索</li>
     </ul>
   </div>
@@ -83,6 +84,10 @@ const searchWebsiteList = [
     title: "微软文档",
     url: "https://support.microsoft.com/zh-cn/Search/results",
     key: "query",
+  },{
+    title: "夸克搜索",
+    url: "https://quark.sm.cn/s",
+    key: "q",
   },
 ];
 export default {
