@@ -1,11 +1,16 @@
 <template>
   <div id="header">
-    丛林意志的互联网领航页
+    <div id="headerTitle">
+      丛林意志的互联网领航页
+    </div>
     <div id="headerMenu">
       <router-link to="/">主页</router-link>
       <router-link to="/tools">工具</router-link>
       <router-link to="/about">关于</router-link>
-      <a v-for="a in 2" :key="a">维护中</a>
+      <a
+        v-for="a in 2"
+        :key="a"
+      >维护中</a>
     </div>
   </div>
 </template>
@@ -18,10 +23,10 @@ defineProps({});
 /* #header {
   padding: 1rem;
 } */
-#headerMenu{
+#headerMenu {
   display: flex;
 }
-#header a{
+#header a {
   width: 100%;
   display: inline-block;
   flex: 1;
@@ -30,5 +35,9 @@ defineProps({});
 
 #header a:hover {
   background: #151;
+}
+
+#headerTitle{
+  padding: 3rem 0 1rem;
 }
 </style>
