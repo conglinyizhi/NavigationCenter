@@ -3,8 +3,8 @@
     丛林意志的互联网领航页
     <div id="headerMenu">
       <router-link to="/">主页</router-link>
-      <router-link to="/tools">工具堆</router-link>
-      <router-link to="/about">工具堆</router-link>
+      <router-link to="/tools">工具</router-link>
+      <router-link to="/about">关于</router-link>
       <a v-for="a in 2" :key="a">维护中</a>
     </div>
   </div>
