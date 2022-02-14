@@ -3,6 +3,7 @@
     id="search"
     :action="searchWebsiteID > -1 ? searchWebsiteList[searchWebsiteID].url : ''"
     target="_blank"
+    @submit="clearKeyWords"
   >
     <span class="searchBox">
       <span class="flex">
@@ -27,10 +28,10 @@
       <input
         :disabled="searchWebsiteID == -1"
         type="text"
-        :name="searchWebsiteID > -1 ? searchWebsiteList[searchWebsiteID].key : ''"
         id="keywordsInput"
         v-model="keywords"
         :placeholder="searchWebsiteID == -1 ? '先选择搜索引擎哦': '使用'+searchWebsiteList[searchWebsiteID].title+'搜索'"
+        @dblclick="putKeyWords"
       />
       <input
         :disabled="searchWebsiteID == -1"
@@ -41,6 +42,10 @@
         class="hide"
         v-if="searchWebsiteID>-1"
       >
+        <input
+          v-model="keywords_Copy"
+          :name="searchWebsiteID > -1 ? searchWebsiteList[searchWebsiteID].key : ''"
+        />
         <input
           :name="key"
           :value="data"
@@ -147,12 +152,24 @@ export default {
   },
   data() {
     return {
+      searchWebsiteList,
       changeingWebsite: false,
       keywords: "",
+      oldkeywords: "",
+      keywords_Copy: "",
       searchWebsiteID: 0,
-      searchWebsiteList,
       searchHelper: 0,
     };
+  },
+  methods: {
+    clearKeyWords() {
+      this.keywords_Copy = this.keywords;
+      this.oldkeywords = this.keywords;
+      this.keywords = "";
+    },
+    putKeyWords() {
+      this.keywords = this.oldkeywords;
+    },
   },
 };
 </script>
