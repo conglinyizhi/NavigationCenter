@@ -150,6 +150,7 @@ const siteData = [
       { title: "萌娘百科", url: "https://zh.moegirl.org.cn" },
       { title: "小鸡词典", url: "https://jikipedia.com" },
       { title: "wikiHow", url: "https://zh.wikihow.com" },
+      { title: "MC 百科", url: "https://www.mcmod.cn" },
     ],
   },
   {
