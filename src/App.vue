@@ -34,4 +34,8 @@ body,*{
   background-color: #111;
   color: #fff;
 }
+body{
+  min-height: 100vh;
+  margin:0;
+}
 </style>

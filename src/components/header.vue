@@ -1,8 +1,12 @@
 <template>
   <div id="header">
-    [深色模式] 丛林意志的互联网领航页 |
-    <router-link to="/">主页</router-link> |
-    <router-link to="/about">关于</router-link>
+    丛林意志的互联网领航页
+    <div id="headerMenu">
+      <router-link to="/">主页</router-link>
+      <router-link to="/tools">工具堆</router-link>
+      <router-link to="/about">工具堆</router-link>
+      <a v-for="a in 2" :key="a">维护中</a>
+    </div>
   </div>
 </template>
 
@@ -11,7 +15,20 @@ defineProps({});
 </script>
 
 <style>
-#header {
+/* #header {
   padding: 1rem;
+} */
+#headerMenu{
+  display: flex;
+}
+#header a{
+  width: 100%;
+  display: inline-block;
+  flex: 1;
+  padding: 10px;
+}
+
+#header a:hover {
+  background: #151;
 }
 </style>
