@@ -189,6 +189,7 @@ export default {
   border: 1px #42b983 groove;
   border-radius: 2px;
   flex: 2;
+  min-width: 1rem;
 }
 @media (min-width: 600px) {
   #search {

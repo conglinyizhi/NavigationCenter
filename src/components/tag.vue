@@ -29,7 +29,6 @@ export default {
   height: 10px;
   border-radius: 100%;
   position: absolute;
-  top: -8px;
 }
 
 .showMode {

@@ -1,9 +1,11 @@
 <template>
-  <div class="linkCardGroup tips">
-    <tag
-      :mode="1"
-      color="#66ccff"
-    /> 代表可能需要 Android 设备才能更好的浏览
+  <div class="linkCardGroup">
+    <div style="margin:10px">
+      <tag
+        :mode="1"
+        color="#66ccff"
+      /> Android 设备限定
+    </div>
   </div>
   <div
     class="linkCardGroup"
@@ -15,9 +17,12 @@
         class="left"
         v-text="siteList.title"
       />
-      <span class="right">包含 {{siteList.list.length}} 个站点 - <button @click="siteList.setAll =! siteList.setAll">更{{siteList.setAll?"少":"多"}}</button></span>
+      <span class="right">{{siteList.list.length}} 站点 <button
+          :style="{'border-color':siteList.showAll?'red':''}"
+          @click="siteList.showAll =! siteList.showAll"
+        >{{siteList.showAll?"折叠":"展开"}}</button></span>
     </div>
-    <div :class="siteList.setAll?'linkCardLinePro':'linkCardLine'" class="linkCardLinePro">
+    <div :class="siteList.showAll?'linkCardLinePro':'linkCardLine'">
       <span
         v-for="(site,key) in siteList.list"
         :key="key"
@@ -46,6 +51,7 @@
           <span v-text="site.url" />
         </div>
       </span>
+      <div class="fatBlock">到底啦</div>
     </div>
   </div>
 </template>
@@ -254,11 +260,12 @@ export default {
   padding: 0 5px 3px;
   display: flex;
 }
-.title span {
-  flex: 1;
+.title .left {
+  flex: 3;
 }
 .title .right {
   text-align: right;
+  flex: 2;
 }
 a {
   color: #42b983;
@@ -271,10 +278,16 @@ a {
   text-align: center;
   border-radius: 3px;
   display: inline-block;
-  width: 10%;
+  width: 30%;
   min-width: 5rem;
   max-width: 7rem;
   line-height: 1.1rem;
+  grid-area: item;
+}
+@media screen and (min-width: 360px) {
+  .linkCardLine {
+    column-count: 3;
+  }
 }
 .linkCard:hover {
   border-color: #42b983;
@@ -283,15 +296,18 @@ a {
 .linkCardItem {
   position: relative;
 }
-
+.linkCardLine {
+  max-height: 2rem;
+}
+.linkCardLinePro {
+  max-height: none;
+}
 .linkCardLinePro,
 .linkCardLine {
   overflow: hidden;
-  transition:0.5s all;
-}
-
-.linkCardLine {
-  max-height: 2rem;
+  transition: 0.5s all;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @media screen {
@@ -303,5 +319,16 @@ a {
 .tips {
   text-align: left;
   padding: 10px;
+}
+
+button {
+  padding: 3px 10px;
+  border-color: #6cf;
+}
+.fatBlock{
+  padding:10px;
+  text-align: center;
+  display:block;
+  width: 100%;
 }
 </style>
