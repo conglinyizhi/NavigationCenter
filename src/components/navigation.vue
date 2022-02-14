@@ -1,5 +1,13 @@
 <template>
   <div
+    class="linkCardGroup tips"
+  >
+    <tag
+      :mode="1"
+      color="#66ccff"
+    /> 代表可能需要 Android 设备才能更好的浏览
+  </div>
+  <div
     class="linkCardGroup"
     v-for="(siteList,i) in siteData"
     :key="i"
@@ -14,7 +22,12 @@
     <span
       v-for="(site,key) in siteList.list"
       :key="key"
+      class="TagFather"
     >
+      <tag
+        color="#66ccff"
+        v-show="site.only_android"
+      />
       <a
         class="linkCard"
         :href="site.url"
@@ -38,6 +51,7 @@
 </template>
 
 <script>
+import tag from "./tag.vue";
 const siteData = [
   {
     title: "更多导航网站",
@@ -82,6 +96,7 @@ const siteData = [
       { title: "思否", url: "https://segmentfault.com" },
       { title: "博客园", url: "https://www.cnblogs.com" },
       { title: "SoJSON", url: "https://www.sojson.com/" },
+      { title: "52 破解", url: "https://www.52pojie.cn" },
     ],
   },
   {
@@ -209,6 +224,9 @@ export default {
       window.alert(`站点 ${site.title} 关闭原因:\n${site.close}`);
     },
   },
+  components: {
+    tag,
+  },
 };
 </script>
 
@@ -265,5 +283,14 @@ a {
   .onlyPrint {
     display: none;
   }
+}
+
+.TagFather {
+  position: relative;
+}
+
+.tips{
+  text-align: left;
+  padding: 10px;
 }
 </style>
