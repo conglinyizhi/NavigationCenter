@@ -30,14 +30,23 @@
         :name="searchWebsiteID > -1 ? searchWebsiteList[searchWebsiteID].key : ''"
         id="keywordsInput"
         v-model="keywords"
+        :placeholder="searchWebsiteID == -1 ? '先选择搜索引擎哦': '使用'+searchWebsiteList[searchWebsiteID].title+'搜索'"
       />
       <input
         :disabled="searchWebsiteID == -1"
         type="submit"
         value="搜索"
       />
-      <span class="hide" v-if="searchWebsiteID>-1">
-      <input :name="key" :value="data" v-for="(data,key,index) in searchWebsiteList[searchWebsiteID].data || {}" :key="index"/>
+      <span
+        class="hide"
+        v-if="searchWebsiteID>-1"
+      >
+        <input
+          :name="key"
+          :value="data"
+          v-for="(data,key,index) in searchWebsiteList[searchWebsiteID].data || {}"
+          :key="index"
+        />
       </span>
     </span>
   </form>
@@ -75,7 +84,8 @@ const searchWebsiteList = [
     title: "知乎",
     url: "https://www.zhihu.com/search",
     key: "q",
-  },{
+  },
+  {
     title: "mag[i]",
     url: "https://magi.com/search",
     key: "q",
@@ -164,10 +174,20 @@ export default {
 @media (min-width: 600px) {
   #search {
     display: inline-block;
-    width: 70%;
+    width: 90%;
   }
   #keywordsInput {
     flex: 5;
+  }
+}
+@media screen and (min-width: 900px) {
+  #search {
+    display: inline-block;
+    width: 70%;
+  }
+  #searchSelectHelper {
+    width: 70%;
+    display: inline-block;
   }
 }
 
@@ -216,7 +236,7 @@ input[type="submit"],
   text-align: left;
   padding-left: 0;
 }
-.hide{
+.hide {
   display: none;
 }
 </style>
