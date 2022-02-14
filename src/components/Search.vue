@@ -26,21 +26,21 @@
         </select>
       </span>
       <input
-        :disabled="searchWebsiteID == -1"
+        :disabled="searchWebsiteID < 0"
         type="text"
         id="keywordsInput"
         v-model="keywords"
-        :placeholder="searchWebsiteID == -1 ? '先选择搜索引擎哦': '使用'+searchWebsiteList[searchWebsiteID].title+'搜索'"
+        :placeholder="searchWebsiteID < 0 ? '先选择搜索引擎哦': '使用'+searchWebsiteList[searchWebsiteID].title+'搜索'"
         @dblclick="putKeyWords"
       />
       <input
-        :disabled="searchWebsiteID == -1"
+        :disabled="searchWebsiteID < 0"
         type="submit"
         value="搜索"
       />
       <span
         class="hide"
-        v-if="searchWebsiteID>-1"
+        v-if="searchWebsiteID > -1"
       >
         <input
           v-model="keywords_Copy"
