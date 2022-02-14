@@ -168,7 +168,9 @@ export default {
       this.keywords = "";
     },
     putKeyWords() {
-      this.keywords = this.oldkeywords;
+      if (this.oldkeywords) {
+        this.keywords = this.oldkeywords;
+      }
     },
   },
 };
