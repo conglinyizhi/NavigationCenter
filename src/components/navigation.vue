@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="linkCardGroup tips"
-  >
+  <div class="linkCardGroup tips">
     <tag
       :mode="1"
       color="#66ccff"
@@ -17,42 +15,44 @@
         class="left"
         v-text="siteList.title"
       />
-      <span class="right">包含 {{siteList.list.length}} 个站点</span>
+      <span class="right">包含 {{siteList.list.length}} 个站点 - <button @click="siteList.setAll =! siteList.setAll">更{{siteList.setAll?"少":"多"}}</button></span>
     </div>
-    <span
-      v-for="(site,key) in siteList.list"
-      :key="key"
-      class="TagFather"
-    >
-      <tag
-        color="#66ccff"
-        v-show="site.only_android"
-      />
-      <a
-        class="linkCard"
-        :href="site.url"
-        v-text="site.title"
-        :title="site.alt || site.title"
-        target="_blank"
-        v-if="!site.close"
-      />
+    <div :class="siteList.setAll?'linkCardLinePro':'linkCardLine'" class="linkCardLinePro">
       <span
-        v-else
-        class="linkCard"
-        v-text="site.title"
-        @click="showCloseMessage(site)"
-      />
-      <div class="onlyPrint">
-        <span v-text="site.title" /> <br />
-        <span v-text="site.url" />
-      </div>
-    </span>
+        v-for="(site,key) in siteList.list"
+        :key="key"
+        class="linkCardItem"
+      >
+        <tag
+          color="#66ccff"
+          v-show="site.only_android"
+        />
+        <a
+          class="linkCard"
+          :href="site.url"
+          v-text="site.title"
+          :title="site.alt || site.title"
+          target="_blank"
+          v-if="!site.close"
+        />
+        <span
+          v-else
+          class="linkCard"
+          v-text="site.title"
+          @click="showCloseMessage(site)"
+        />
+        <div class="onlyPrint">
+          <span v-text="site.title" /> <br />
+          <span v-text="site.url" />
+        </div>
+      </span>
+    </div>
   </div>
 </template>
 
 <script>
 import tag from "./tag.vue";
-const siteData = [
+let siteData = [
   {
     title: "更多导航网站",
     list: [
@@ -64,6 +64,7 @@ const siteData = [
         url: "https://www.nbwz.com",
       },
     ],
+    showAll: false,
   },
   {
     title: "邮箱",
@@ -216,7 +217,10 @@ const siteData = [
 export default {
   data() {
     return {
-      siteData,
+      siteData: siteData.map((item) => {
+        item.showAll = false;
+        return item;
+      }),
     };
   },
   methods: {
@@ -275,8 +279,19 @@ a {
 .linkCard:hover {
   border-color: #42b983;
 }
-.linkCard .title {
-  margin-bottom: 0.5rem;
+
+.linkCardItem {
+  position: relative;
+}
+
+.linkCardLinePro,
+.linkCardLine {
+  overflow: hidden;
+  transition:0.5s all;
+}
+
+.linkCardLine {
+  max-height: 2rem;
 }
 
 @media screen {
@@ -285,11 +300,7 @@ a {
   }
 }
 
-.TagFather {
-  position: relative;
-}
-
-.tips{
+.tips {
   text-align: left;
   padding: 10px;
 }
