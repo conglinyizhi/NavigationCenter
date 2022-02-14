@@ -18,7 +18,7 @@
             v-text="a.title"
           />
           <option
-            v-text="'帮我选择'"
+            v-text="'==帮我选择=='"
             @click="showHelper"
             :value="-1"
           />
@@ -36,6 +36,9 @@
         type="submit"
         value="搜索"
       />
+      <span class="hide" v-if="searchWebsiteID>-1">
+      <input :name="key" :value="data" v-for="(data,key,index) in searchWebsiteList[searchWebsiteID].data || {}" :key="index"/>
+      </span>
     </span>
   </form>
   <div
@@ -45,10 +48,12 @@
     <div>搜索引擎使用提示</div>
     <ul>
       <li>查找网络热词，优先小鸡词典</li>
+      <li>查询企业，优先使用爱企查</li>
       <li>需要找到某个问题的解决方案，请使用必应或者谷歌</li>
       <li>Excel 或者 Office 办公软件的使用方法，也许可以试试微软文档搜索</li>
       <li>如果您需要搜索文中的某个段落出处，可以考虑使用百度</li>
       <li>搜索电影、小说，夸克的搜索结果优于其他</li>
+      <li><code>mag[i]</code> 尚不够了解，达到一定理解后会解锁这一条</li>
       <li>除非仅仅是在搜索一个 bilibili UP 主或者 BVid 或者 aid，否则请不要使用 bilibili 搜索</li>
     </ul>
   </div>
@@ -65,6 +70,23 @@ const searchWebsiteList = [
     title: "小鸡词典",
     url: "https://jikipedia.com/search",
     key: "phrase",
+  },
+  {
+    title: "知乎",
+    url: "https://www.zhihu.com/search",
+    key: "q",
+  },{
+    title: "mag[i]",
+    url: "https://magi.com/search",
+    key: "q",
+  },
+  {
+    title: "爱企查",
+    url: "https://aiqicha.baidu.com/s",
+    key: "q",
+    data: {
+      t: 0,
+    },
   },
   {
     title: "bilibili",
@@ -92,9 +114,17 @@ const searchWebsiteList = [
     key: "query",
   },
   {
-    title: "夸克搜索",
+    title: "夸克内置",
     url: "https://quark.sm.cn/s",
     key: "q",
+  },
+  {
+    title: "搜狗微信",
+    url: "https://weixin.sogou.com/weixin?type=2",
+    key: "query",
+    data: {
+      type: 2,
+    },
   },
 ];
 export default {
@@ -185,5 +215,8 @@ input[type="submit"],
 #searchSelectHelper ul {
   text-align: left;
   padding-left: 0;
+}
+.hide{
+  display: none;
 }
 </style>
