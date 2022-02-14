@@ -120,6 +120,7 @@ let siteData = [
     title: "游戏官网",
     list: [
       { title: "Genshin", url: "https://ys.mihoyo.com/main/" },
+      { title: "hoyoverse", url: "https://www.hoyoverse.com/zh-cn/" },
       { title: "米哈游", url: "https://mihoyo.com" },
       { title: "腾讯游戏", url: "https://game.qq.com" },
       { title: "完美世界", url: "https://game.wanmei.com" },
