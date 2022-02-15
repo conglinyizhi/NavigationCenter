@@ -61,8 +61,7 @@
   >
     <div>搜索引擎使用提示</div>
     <ul>
-      <li>查找网络热词，优先小鸡词典</li>
-      <li>查询企业，优先使用爱企查</li>
+      <li>网络热词用小鸡词典、网页开发使用 MDN、查公司使用爱企查</li>
       <li>如果是想了解一个名词概念，或许 <code>mag[i]</code> 可以给出不错的答案</li>
       <li>Excel 或者 Office 办公软件的使用方法，也许可以试试微软文档搜索</li>
       <li>需要找到某个问题的解决方案，请使用必应或者谷歌</li>
@@ -81,6 +80,10 @@ const searchWebsiteList = [
     key: "q",
   },
   {
+    title: "MDN Web Doc",
+    url: "https://developer.mozilla.org/zh-CN/search",
+    key: "q",
+  },{
     title: "小鸡词典",
     url: "https://jikipedia.com/search",
     key: "phrase",
