@@ -1,6 +1,6 @@
 <template>
   <div id="footer">
-    <div @click="showDebugData">
+    <div>
       我虽无意逐鹿，却知苍生苦楚 ——原神 钟离
     </div>
     <div>Powery By <a
@@ -19,13 +19,6 @@ export default {
       debugdata: {
         width: window.innerWidth,
         height: window.innerHeight,
-      },
-      methods: {
-        showDebugData() {
-          alert(
-            `此世诸神群魔并起，我虽无意逐鹿，却知苍生苦楚。\n屏幕尺寸：${this.width}x${this.height}`
-          );
-        },
       },
     };
   },
