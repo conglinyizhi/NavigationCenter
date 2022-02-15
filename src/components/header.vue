@@ -6,11 +6,12 @@
     <div id="headerMenu">
       <router-link to="/">主页</router-link>
       <router-link to="/tools">工具</router-link>
+      <router-link to="/debug">调试</router-link>
       <router-link to="/about">关于</router-link>
       <a
         v-for="a in 2"
         :key="a"
-      >维护中</a>
+      >暂缺</a>
     </div>
   </div>
 </template>

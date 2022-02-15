@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Tools from '../views/Tools.vue'
+import Debug from '../views/debug.vue'
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -20,6 +21,10 @@ const router = createRouter({
       path:'/tools',
       name:'Tools',
       component:Tools
+    },{
+      path:'/debug',
+      name:'debug',
+      component:Debug
     }
   ]
 })
