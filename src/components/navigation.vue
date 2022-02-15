@@ -275,15 +275,14 @@ a {
 .linkCard {
   border: 1px #0ed8075b groove;
   padding: 3px;
-  margin: 3px;
+  margin: 3px 5px;
   text-align: center;
   border-radius: 3px;
   display: inline-block;
   width: 30%;
-  min-width: 5rem;
+  min-width: 4.5rem;
   max-width: 7rem;
   line-height: 1.1rem;
-  grid-area: item;
 }
 @media screen and (min-width: 360px) {
   .linkCardLine {
