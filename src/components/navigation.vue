@@ -147,7 +147,7 @@ let siteData = [
       { title: "快手", url: "https://www.kuaishou.com" },
       { title: "小咖秀", url: "http://www.xiaokaxiu.com" },
       { title: "微视", url: "https://weishi.qq.com" },
-      { title: "抖音火山版", url: "https://www.huoshanzhibo.com" },
+      { title: "火山直播", url: "https://www.huoshanzhibo.com" },
       { title: "美拍", url: "https://www.meipai.com" },
       { title: "西瓜", url: "https://sso.toutiao.com" },
       { title: "快剪辑", url: "https://kuai.360.cn" },
