@@ -1,5 +1,3 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <p>我等必将复起，古木已发新枝。</p>
 </template>
