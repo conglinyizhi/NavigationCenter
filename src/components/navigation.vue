@@ -269,11 +269,11 @@ export default {
   flex: 2;
 }
 a {
-  color: #42b983;
+  color: rgb(197, 236, 217);
   text-decoration: none;
 }
 .linkCard {
-  border: 1px #42b9832f groove;
+  border: 1px #0ed8075b groove;
   padding: 3px;
   margin: 3px;
   text-align: center;
@@ -291,7 +291,7 @@ a {
   }
 }
 .linkCard:hover {
-  border-color: #42b983;
+  border-color: #13ff0b;
 }
 
 .linkCardItem {
