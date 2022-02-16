@@ -18,9 +18,13 @@
         class="left"
         v-text="siteList.title"
       />
-      <span class="right">{{siteList.list.length}} 站点 <button
-          class="linkCardButton"
-          :style="{'border-color':siteList.showAll?'red':''}"
+      <span class="right">
+        <span class="btn-sm btn btn-dark">
+          {{siteList.list.length}} 站点
+        </span>
+        <button
+          class="btn-sm btn"
+          :class="[siteList.showAll?'btn-outline-warning':'btn-outline-primary']"
           @click="siteList.showAll =! siteList.showAll"
         >{{siteList.showAll?"折叠":"展开"}}</button></span>
     </div>
@@ -259,6 +263,8 @@ export default {
     display: flex;
     & .left {
       flex: 3;
+      line-height: 1.9rem;
+      font-size: 1.2rem;
     }
     & .right {
       text-align: right;
@@ -271,6 +277,7 @@ export default {
   }
   .linkCardItem {
     position: relative;
+    background: none;
   }
   .linkCardLine {
     overflow: hidden;
