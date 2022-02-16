@@ -17,7 +17,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -27,15 +27,22 @@ export default {
 }
 
 /* 深色模式 */
+.bgBlack,
 html {
-  background: #111;
+  background-color: #111 !important;
 }
-body,*{
-  background-color: #111;
-  color: #fff;
-}
-body{
+body {
   min-height: 100vh;
-  margin:0;
+  margin: 0;
+  .bgBlack();
+  & * {
+    background-color: #111;
+    color: #fff;
+  }
+  & #app a {
+    color: rgb(197, 236, 217);
+    text-decoration: none;
+    overflow: hidden;
+  }
 }
 </style>

@@ -242,7 +242,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less">
 .linkCardGroup {
   border: 1px #42b98377 groove;
   padding: 3px;
@@ -261,17 +261,13 @@ export default {
 .title {
   padding: 0 5px 3px;
   display: flex;
-}
-.title .left {
-  flex: 3;
-}
-.title .right {
-  text-align: right;
-  flex: 2;
-}
-a {
-  color: rgb(197, 236, 217);
-  text-decoration: none;
+  & .left {
+    flex: 3;
+  }
+  & .right {
+    text-align: right;
+    flex: 2;
+  }
 }
 .linkCard {
   border: 1px #0ed8075b groove;
@@ -284,14 +280,14 @@ a {
   min-width: 4.5rem;
   max-width: 7rem;
   line-height: 1.1rem;
+  &:hover {
+    border-color: #13ff0b;
+  }
 }
 @media screen and (min-width: 360px) {
   .linkCardLine {
     column-count: 3;
   }
-}
-.linkCard:hover {
-  border-color: #13ff0b;
 }
 
 .linkCardItem {
