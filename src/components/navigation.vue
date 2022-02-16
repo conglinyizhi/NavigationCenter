@@ -18,6 +18,7 @@
         v-text="siteList.title"
       />
       <span class="right">{{siteList.list.length}} 站点 <button
+          class="linkCardButton"
           :style="{'border-color':siteList.showAll?'red':''}"
           @click="siteList.showAll =! siteList.showAll"
         >{{siteList.showAll?"折叠":"展开"}}</button></span>
@@ -321,7 +322,7 @@ a {
   padding: 10px;
 }
 
-button {
+button.linkCardButton {
   padding: 3px 10px;
   border-color: #6cf;
 }
