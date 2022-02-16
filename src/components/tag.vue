@@ -23,7 +23,7 @@ export default {
 };
 </script>
 
-<style scope>
+<style scope lang="less">
 .tag {
   width: 10px;
   height: 10px;

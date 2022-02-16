@@ -3,15 +3,12 @@
     <div id="headerTitle">
       丛林意志的互联网领航页
     </div>
-    <div id="headerMenu">
-      <router-link to="/">主页</router-link>
-      <router-link to="/tools">工具</router-link>
-      <router-link to="/debug">调试</router-link>
-      <router-link to="/about">关于</router-link>
-      <a
-        v-for="a in 2"
-        :key="a"
-      >暂缺</a>
+    <div id="headerMenu" class="row">
+      <router-link class="col-md-1" to="/">主页</router-link>
+      <router-link class="col-md-1" to="/tools">工具</router-link>
+      <router-link class="col-md-1" to="/debug">调试</router-link>
+      <router-link class="col-md-1" to="/about">关于</router-link>
+      <span class="col-md-1" v-for="a in 3" :key="a">1</span>
     </div>
   </div>
 </template>
@@ -20,7 +17,7 @@
 defineProps({});
 </script>
 
-<style>
+<style lang="less">
 /* #header {
   padding: 1rem;
 } */

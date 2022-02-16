@@ -25,7 +25,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped  lang="less">
 #footer {
   text-align: center;
   padding-bottom: 1rem;
