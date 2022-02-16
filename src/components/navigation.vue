@@ -325,10 +325,10 @@ button {
   padding: 3px 10px;
   border-color: #6cf;
 }
-.fatBlock{
-  padding:10px;
+.fatBlock {
+  padding: 10px;
   text-align: center;
-  display:block;
+  display: block;
   width: 100%;
 }
 </style>
