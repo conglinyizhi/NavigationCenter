@@ -45,4 +45,8 @@ export default {
 #headerTitle {
   padding: 3rem 0 1rem;
 }
+
+.router-link-active {
+  background: rgb(10, 54, 10);
+}
 </style>
