@@ -1,10 +1,10 @@
 <template>
   <div class="linkCardGroup">
     <div style="margin:10px">
-      <tag
-        :mode="1"
-        color="#66ccff"
-      /> Android 设备限定
+      <span
+        class="linkCardTips"
+        style="border-color:rgb(54,140,183)"
+      >Android</span>
     </div>
   </div>
   <div
@@ -39,6 +39,7 @@
           v-text="site.title"
           :title="site.alt || site.title"
           target="_blank"
+          :style="{borderColor:site.only_android?'rgb(54,140,183)':''}"
           v-if="!site.close"
         />
         <span
@@ -58,7 +59,6 @@
 </template>
 
 <script>
-import tag from "./tag.vue";
 let siteData = [
   {
     title: "更多导航网站",
@@ -236,9 +236,6 @@ export default {
       window.alert(`站点 ${site.title} 关闭原因:\n${site.close}`);
     },
   },
-  components: {
-    tag,
-  },
 };
 </script>
 
@@ -251,6 +248,38 @@ export default {
   border-radius: 6px;
   margin: 3px 5px;
   padding-left: 4px;
+  .title {
+    padding: 0 5px 3px;
+    display: flex;
+    & .left {
+      flex: 3;
+    }
+    & .right {
+      text-align: right;
+      flex: 2;
+      button.linkCardButton {
+        padding: 3px 10px;
+        border-color: #6cf;
+      }
+    }
+  }
+  .linkCardItem {
+    position: relative;
+  }
+  .linkCardLine {
+    overflow: hidden;
+    transition: 0.5s all;
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 2rem;
+    @media screen and (min-width: 360px) {
+      column-count: 3;
+    }
+  }
+  .linkCardLinePro {
+    max-height: none;
+    .linkCardLine();
+  }
 }
 @media screen and (min-width: 900px) {
   .linkCardGroup {
@@ -258,70 +287,34 @@ export default {
     display: inline-block;
   }
 }
-.title {
-  padding: 0 5px 3px;
-  display: flex;
-  & .left {
-    flex: 3;
-  }
-  & .right {
-    text-align: right;
-    flex: 2;
-  }
+.linkCardTips {
+  .linkCard();
+  max-width: none;
+  min-width: none;
+  width: auto;
 }
 .linkCard {
   border: 1px #0ed8075b groove;
-  padding: 3px;
+  padding: 3px 0px;
   margin: 3px 5px;
   text-align: center;
   border-radius: 3px;
   display: inline-block;
   width: 30%;
-  min-width: 4.5rem;
+  min-width: 5rem;
   max-width: 7rem;
   line-height: 1.1rem;
   &:hover {
     border-color: #13ff0b;
   }
 }
-@media screen and (min-width: 360px) {
-  .linkCardLine {
-    column-count: 3;
-  }
-}
 
-.linkCardItem {
-  position: relative;
-}
-.linkCardLine {
-  max-height: 2rem;
-}
-.linkCardLinePro {
-  max-height: none;
-}
-.linkCardLinePro,
-.linkCardLine {
-  overflow: hidden;
-  transition: 0.5s all;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-@media screen {
-  .onlyPrint {
+.onlyPrint {
+  @media screen {
     display: none;
   }
 }
 
-.tips {
-  text-align: left;
-  padding: 10px;
-}
-
-button.linkCardButton {
-  padding: 3px 10px;
-  border-color: #6cf;
-}
 .fatBlock {
   padding: 10px;
   text-align: center;
