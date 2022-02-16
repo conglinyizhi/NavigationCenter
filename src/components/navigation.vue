@@ -1,10 +1,11 @@
 <template>
   <div class="linkCardGroup">
     <div style="margin:10px">
-      <span
-        class="linkCardTips"
-        style="border-color:rgb(54,140,183)"
-      >Android</span>
+      <div>
+        有的链接或许需要特殊设备才能发挥最大作用，比如 Via 是一个 Android 的浏览器，我们会使用蓝色边框标出
+      </div>
+      <span class="android">Android 设备</span>
+      <span class="ios">IOS/IPadOS 设备</span>
     </div>
   </div>
   <div
@@ -39,7 +40,7 @@
           v-text="site.title"
           :title="site.alt || site.title"
           target="_blank"
-          :style="{borderColor:site.only_android?'rgb(54,140,183)':''}"
+          :class="[site.only_android?'android':'']"
           v-if="!site.close"
         />
         <span
@@ -248,6 +249,11 @@ export default {
   border-radius: 6px;
   margin: 3px 5px;
   padding-left: 4px;
+  transition: all 0.3s;
+  @media screen and (min-width: 900px) {
+    width: 80%;
+    display: inline-block;
+  }
   .title {
     padding: 0 5px 3px;
     display: flex;
@@ -277,22 +283,11 @@ export default {
     }
   }
   .linkCardLinePro {
-    max-height: none;
     .linkCardLine();
+    max-height: none;
   }
 }
-@media screen and (min-width: 900px) {
-  .linkCardGroup {
-    width: 80%;
-    display: inline-block;
-  }
-}
-.linkCardTips {
-  .linkCard();
-  max-width: none;
-  min-width: none;
-  width: auto;
-}
+
 .linkCard {
   border: 1px #0ed8075b groove;
   padding: 3px 0px;
@@ -308,7 +303,13 @@ export default {
     border-color: #13ff0b;
   }
 }
-
+.linkCardTips {
+  .linkCard();
+  max-width: none;
+  min-width: none;
+  width: auto;
+  padding: 3px;
+}
 .onlyPrint {
   @media screen {
     display: none;
@@ -320,5 +321,23 @@ export default {
   text-align: center;
   display: block;
   width: 100%;
+}
+
+// Tips 工具类
+.tipFather() {
+  .linkCardTips();
+  border-color: @color;
+  &:hover {
+    border-color: @color;
+  }
+}
+.android {
+  @color: rgb(54, 140, 183);
+  .tipFather();
+}
+
+.ios {
+  @color: rgb(226, 153, 18);
+  .tipFather();
 }
 </style>
