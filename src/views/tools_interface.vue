@@ -6,6 +6,11 @@
       <div class="programBar"></div>
     </div>
   </div>
+  <div>
+    <a href="/tools/shi_zhi_za_tan">
+      <div>原神 - 拾枝杂谈生成辅助</div>
+    </a>
+  </div>
 </template>
 
 <style>
@@ -16,7 +21,8 @@
   border-radius: 20px;
   transition: width 1s;
 }
-.programBar:hover,.programBarFather:hover div {
+.programBar:hover,
+.programBarFather:hover div {
   width: 100%;
 }
 
