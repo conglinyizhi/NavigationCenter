@@ -1,6 +1,6 @@
 <template>
   <div class="linkCardGroup">
-    <div style="margin:10px">
+    <div class="linkCardHeadTip">
       <div>
         偏小众的手机软件官网会被按照设备特殊标记出来
       </div>
@@ -225,6 +225,17 @@ let siteData = [
     ],
   },
   {
+    title: "工具类",
+    list: [
+      {
+        title: "知犀图示",
+        alt: "知犀思维导图",
+        url: "https://www.zhixi.com",
+        all: true,
+      },
+    ],
+  },
+  {
     title: "友情链接",
     list: [{ title: "暂无", url: "?", close: "暂时没有友情链接" }],
   },
@@ -308,6 +319,7 @@ export default {
   min-width: 5rem;
   max-width: 7rem;
   line-height: 1.1rem;
+  transition: all 0.2s;
   &:hover {
     border-color: #13ff0b;
   }
@@ -340,21 +352,37 @@ export default {
     border-color: @color;
   }
 }
-.android {
-  @color: rgb(54, 140, 183);
-  .tipFather();
-}
+.linkCardHeadTip {
+  margin: 10;
+  .android {
+    @color: rgb(54, 140, 183);
+    .tipFather();
+  }
 
-.ios {
-  @color: rgb(226, 153, 18);
-  .tipFather();
-}
+  .ios {
+    @color: rgb(226, 153, 18);
+    .tipFather();
+  }
 
-.all {
-  .linkCardTips();
-  animation: flashLinkCard 2s infinite;
+  .all {
+    .linkCardTips();
+    animation: flashLinkCard 2s infinite;
+  }
 }
-
+.linkCardLine {
+  .android {
+    .linkCard();
+    border-color: rgb(54, 140, 183);
+  }
+  .ios {
+    .linkCard();
+    border-color: rgb(226, 153, 18);
+  }
+  .all {
+    .linkCard();
+    animation: flashLinkCard 2s infinite;
+  }
+}
 @keyframes flashLinkCard {
   0%,
   to {
