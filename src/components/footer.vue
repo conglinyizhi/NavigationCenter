@@ -1,5 +1,6 @@
 <template>
   <div id="footer">
+    <div>欢迎到 <a href="https://github.com/conglinyizhi/NavigationCenter" target="_blank">GitHub</a> 一起编辑这个站点</div>
     <div>
       我虽无意逐鹿，却知苍生苦楚 ——原神 钟离
     </div>
