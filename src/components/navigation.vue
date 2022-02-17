@@ -171,6 +171,7 @@ let siteData = [
       { title: "喜马拉雅", url: "https://www.ximalaya.com" },
       { title: "荔枝FM", url: "https://lizhi.fm" },
       { title: "凤凰FM", url: "https://diantai.ifeng.com" },
+      { title: "Listen 1", url: "https://listen1.github.io/listen1" ,all:true},
     ],
   },
   {
