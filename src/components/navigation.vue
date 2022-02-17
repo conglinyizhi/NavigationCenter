@@ -20,14 +20,14 @@
         v-text="siteList.title"
       />
       <span class="right">
-        <span class="btn-sm btn btn-dark">
-          {{siteList.list.length}} 站点
-        </span>
         <button
           class="btn-sm btn"
           :class="[siteList.showAll?'btn-outline-warning':'btn-outline-primary']"
           @click="siteList.showAll =! siteList.showAll"
-        >{{siteList.showAll?"折叠":"展开"}}</button></span>
+        >{{siteList.showAll?"折叠":"展开"}} <span
+            class="badge badge-light"
+            v-text="siteList.list.length"
+          /></button></span>
     </div>
     <div :class="siteList.showAll?'linkCardLinePro':'linkCardLine'">
       <span
