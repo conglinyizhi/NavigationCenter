@@ -1,7 +1,7 @@
 <template>
   <div id="header">
     <div id="headerTitle">
-      丛林意志的互联网领航页
+      互联网领航者
     </div>
     <div id="headerMenu">
       <router-link
