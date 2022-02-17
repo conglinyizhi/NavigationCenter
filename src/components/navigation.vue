@@ -234,6 +234,15 @@ let siteData = [
         all: true,
       },
     ],
+  },{
+    title: "短连接服务商",
+    list: [
+      {
+        title: "好缩短链",
+        url: "https://c34.cn/",
+        all: true,
+      },
+    ],
   },
   {
     title: "友情链接",
