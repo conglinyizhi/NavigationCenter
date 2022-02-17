@@ -2,10 +2,10 @@
   <div class="linkCardGroup">
     <div style="margin:10px">
       <div>
-        有的链接或许需要特殊设备才能发挥最大作用，比如 Via 是一个 Android 的浏览器，我们会使用蓝色边框标出
+        偏小众的手机软件官网会被按照设备特殊标记出来
       </div>
-      <span class="android">Android 设备</span>
-      <span class="ios">IOS/IPadOS 设备</span>
+      <span class="android">Android</span>
+      <span class="ios">IOS</span>
     </div>
   </div>
   <div
