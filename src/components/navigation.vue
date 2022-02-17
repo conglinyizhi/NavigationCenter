@@ -6,6 +6,7 @@
       </div>
       <span class="android">Android</span>
       <span class="ios">IOS</span>
+      <span class="all">Android &amp; IOS</span>
     </div>
   </div>
   <div
@@ -40,7 +41,7 @@
           v-text="site.title"
           :title="site.alt || site.title"
           target="_blank"
-          :class="[site.only_android?'android':'']"
+          :class="[site.only_android?'android':'',site.all?'all':'']"
           v-if="!site.close"
         />
         <span
@@ -167,7 +168,11 @@ let siteData = [
       { title: "喜马拉雅", url: "https://www.ximalaya.com" },
       { title: "荔枝FM", url: "https://lizhi.fm" },
       { title: "凤凰FM", url: "https://diantai.ifeng.com" },
-      { title: "Listen 1", url: "https://listen1.github.io/listen1" ,all:true},
+      {
+        title: "Listen 1",
+        url: "https://listen1.github.io/listen1",
+        all: true,
+      },
     ],
   },
   {
@@ -343,5 +348,20 @@ export default {
 .ios {
   @color: rgb(226, 153, 18);
   .tipFather();
+}
+
+.all {
+  .linkCardTips();
+  animation: flashLinkCard 2s infinite;
+}
+
+@keyframes flashLinkCard {
+  0%,
+  to {
+    border-color: rgb(57, 4, 100);
+  }
+  50% {
+    border-color: rgb(225, 0, 255);
+  }
 }
 </style>
