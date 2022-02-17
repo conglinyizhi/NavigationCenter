@@ -34,10 +34,6 @@
         :key="key"
         class="linkCardItem"
       >
-        <tag
-          color="#66ccff"
-          v-show="site.only_android"
-        />
         <a
           class="linkCard"
           :href="site.url"
